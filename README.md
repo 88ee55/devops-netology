@@ -11,3 +11,5 @@
 файл terraform.rc  
 
 task3  
+
+update from pycharm
