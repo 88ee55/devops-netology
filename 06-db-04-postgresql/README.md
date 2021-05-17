@@ -35,9 +35,11 @@
 `docker exec -it 0604 psql -U postgres`
 
 `postgres=# \c test_database;`
+
 ![](img1.png)
 
 `SELECT attname, MAX(avg_width) as max_avg FROM pg_stats WHERE tablename='orders' GROUP BY attname ORDER BY max_avg DESC LIMIT 1;`
+
 ![](img2.png)
 
 ## Задача 3
