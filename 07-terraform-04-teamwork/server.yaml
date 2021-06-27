@@ -1,0 +1,12 @@
+repos:
+  - id: github.com/88ee55
+    allowed_overrides: [workflow]
+    allow_custom_workflows: true
+
+workflows:
+  default:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args: ["-lock", "false"]
