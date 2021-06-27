@@ -47,9 +47,7 @@ resource "aws_network_interface" "foo" {
 module "web" {
   source = "terraform-aws-modules/ec2-instance/aws"
 
-  instance_count = 1
-
-  name          = "example-normal"
+  name          = "web"
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t2.micro"
 
