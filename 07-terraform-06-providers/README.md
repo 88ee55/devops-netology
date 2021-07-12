@@ -2,7 +2,9 @@
 
 ## Задача 1
 
-1. [Задача 1.1](https://github.com/hashicorp/terraform-provider-aws/tree/main/aws)
+1. [DataSources](https://github.com/hashicorp/terraform-provider-aws/blob/main/aws/provider.go#L186)
+[Resources](https://github.com/hashicorp/terraform-provider-aws/blob/main/aws/provider.go#L453)
+
 
 2.
 ```
