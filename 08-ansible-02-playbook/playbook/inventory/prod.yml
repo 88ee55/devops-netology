@@ -1,0 +1,10 @@
+---
+# elasticsearch:
+#   hosts:
+#     localhost:
+#       ansible_connection: ssh
+#       ansible_user: root
+all:
+  hosts:
+    centos7:
+      ansible_connection: docker
