@@ -94,7 +94,7 @@
       become: true
       unarchive:
         copy: false
-        src: "/tmp/kibana-{{ kibanaversion }}-linux-x86_64.tar.gz"
+        src: "/tmp/kibana-{{ kibana_version }}-linux-x86_64.tar.gz"
         dest: "{{ kibana_home }}"
         extra_opts: [--strip-components=1]
         creates: "{{ kibana_home }}/bin/kibana"

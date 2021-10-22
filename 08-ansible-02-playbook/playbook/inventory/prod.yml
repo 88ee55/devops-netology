@@ -1,10 +1,11 @@
 ---
-# elasticsearch:
-#   hosts:
-#     localhost:
-#       ansible_connection: ssh
-#       ansible_user: root
-all:
+elasticsearch:
   hosts:
-    centos7:
+    ubuntu:
+      ansible_user: ubuntu
+      ansible_connection: docker
+kibana:
+  hosts:
+    ubuntu:
+      ansible_user: ubuntu
       ansible_connection: docker

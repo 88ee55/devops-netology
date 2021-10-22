@@ -1,6 +1,6 @@
 # Домашнее задание к занятию "08.02 Работа с Playbook"
 
-PLaybook предназначен для установки x64 версий на Linux
+Playbook предназначен для установки x64 версий на Linux
 - jdk
 - elasticsearch
 - kibana
@@ -22,3 +22,17 @@ PLaybook предназначен для установки x64 версий н�
  - java
  - elastic
  - kibana
+
+Поднять контейнер с именем ubuntu
+
+```docker run -d --name=ubuntu -p 9200:9200 -p 5601:5601 ubuntu:my sleep 60000```
+
+Запустить playbook
+
+```ansible-playbook -i inventory/prod.yml site.yml```
+
+Зайти в контейнер, запустить elasticsearch и kibana
+```
+docker exec -it ubuntu bash
+elasticsearch -d -p pid && kibana
+```
