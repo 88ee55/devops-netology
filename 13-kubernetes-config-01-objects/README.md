@@ -117,7 +117,7 @@ mydb-0                   1/1     Running   0          36s
 ```
 # Deployment фронтенд
 ---
-aapiVersion: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: myapp-frontend
@@ -144,7 +144,7 @@ spec:
 
 # Deployment бекенд
 ---
-aapiVersion: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: myapp-backend
