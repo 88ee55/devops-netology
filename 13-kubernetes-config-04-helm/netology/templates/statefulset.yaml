@@ -1,0 +1,32 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mydb
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: mydb
+spec:
+  selector:
+    matchLabels:
+      app: mydb
+  serviceName: "db"
+  replicas: {{ .Values.replicaCount }}
+  template:
+    metadata:
+      labels:
+        app: mydb
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: db
+        image: "{{ .Values.image.db.image }}:{{ .Values.image.db.tag }}"
+        ports:
+        - containerPort: {{ .Values.container.port.db }}
+        env:
+          - name: POSTGRES_PASSWORD
+            value: postgres
+          - name: POSTGRES_USER
+            value: postgres
+          - name: POSTGRES_DB
+            value: news

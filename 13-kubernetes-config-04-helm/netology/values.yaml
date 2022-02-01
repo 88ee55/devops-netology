@@ -1,0 +1,31 @@
+replicaCount: 1
+
+namespace: helm
+
+image:
+  repository: 88ee55
+  frontend: frontend
+  backend: backend
+  tag: ""
+  db:
+    image: postgres
+    tag: 13-alpine
+
+service:
+  type: 
+    db: ClusterIP
+    frontend: NodePort
+
+container:
+  port:
+    frontend: 80
+    backend: 9000
+    db: 5432
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
