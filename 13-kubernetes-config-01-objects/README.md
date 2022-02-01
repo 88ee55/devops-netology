@@ -208,8 +208,6 @@ apiVersion: v1
 kind: Service
 metadata:
   name: db
-  labels:
-    app: mydb
 spec:
   ports:
   - name: postgres
@@ -224,8 +222,6 @@ apiVersion: v1
 kind: Service
 metadata:
   name: frontend
-  labels:
-    app: mydb
 spec:
   ports:
   - name: frontend
