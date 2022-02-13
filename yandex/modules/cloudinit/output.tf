@@ -1,3 +1,3 @@
-output "private_key" {
-    value = data.cloudinit_config.private_key.rendered
+output "rendered" {
+    value = data.cloudinit_config.default.rendered
 }

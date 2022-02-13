@@ -1,3 +1,4 @@
-variable "tls" {
+variable "template" {
+  default = ""
   type = string
 }

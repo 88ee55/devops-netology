@@ -29,7 +29,7 @@ resource "yandex_compute_instance" "default" {
   }
 
   metadata = {
-      ssh-keys = var.sshkey
+      ssh-keys  = var.sshkey
       user-data = var.userdata != "" ? var.userdata : null
   }
 }
