@@ -19,3 +19,8 @@ variable "file_destination" {
 
 variable "file_source" {
 }
+
+variable "sse" {
+  default = {}
+  type    = map
+}
