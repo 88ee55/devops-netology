@@ -67,7 +67,7 @@ module "mysql" {
   resource    = local.resource
   db_name     = "netology_db"
   backup_time = local.backup_time
-  protect     = true
+  protect     = var.protect
   credentials = local.credentials
 
 }
