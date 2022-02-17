@@ -11,7 +11,7 @@ resource "tls_private_key" "key" {
 }
 
 module "cloudinit" {
-  source   = "../modules/cloudinit"
+  source = "../modules/cloudinit"
 
   template = tls_private_key.key.private_key_pem
 }
@@ -27,9 +27,9 @@ resource "yandex_vpc_network" "netology" {
 module "subnet_public" {
   source = "../modules/subnet"
 
-  name        = "public"
-  cidr        = ["192.168.10.0/24"]
-  network     = yandex_vpc_network.netology.id
+  name    = "public"
+  cidr    = ["192.168.10.0/24"]
+  network = yandex_vpc_network.netology.id
 }
 
 module "public_instance" {

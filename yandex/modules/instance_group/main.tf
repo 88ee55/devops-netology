@@ -1,14 +1,14 @@
 resource "yandex_compute_instance_group" "default" {
-  name                = var.name
-  folder_id           = var.folder
-  service_account_id  = var.sa
+  name               = var.name
+  folder_id          = var.folder
+  service_account_id = var.sa
 
   instance_template {
     platform_id = "standard-v3"
     resources {
-    cores         = 2
-    memory        = 2
-    core_fraction = 20
+      cores         = 2
+      memory        = 2
+      core_fraction = 20
     }
 
     scheduling_policy {
@@ -27,7 +27,7 @@ resource "yandex_compute_instance_group" "default" {
       subnet_ids = var.subnets
     }
     metadata = {
-      ssh-keys = var.sshkey
+      ssh-keys  = var.sshkey
       user-data = var.userdata != "" ? var.userdata : null
     }
   }

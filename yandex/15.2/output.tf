@@ -1,3 +1,3 @@
 output "public_ip" {
-    value = module.lb.ip
+  value = module.lb.ip
 }

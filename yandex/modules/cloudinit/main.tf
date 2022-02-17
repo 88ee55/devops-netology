@@ -5,6 +5,6 @@ data "cloudinit_config" "default" {
   part {
     filename     = "cmd.sh"
     content_type = "text/x-shellscript"
-    content      = templatefile("cloud.sh",  {template = var.template}) 
+    content      = templatefile("cloud.sh", { template = var.template })
   }
 }

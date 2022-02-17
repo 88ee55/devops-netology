@@ -17,7 +17,7 @@ variable "subnets" {
 
 variable "zones" {
   default = ["ru-central1-c"]
-  type = list
+  type    = list(any)
 }
 
 variable "userdata" {

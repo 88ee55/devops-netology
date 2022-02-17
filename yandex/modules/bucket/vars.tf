@@ -22,5 +22,5 @@ variable "file_source" {
 
 variable "sse" {
   default = {}
-  type    = map
+  type    = map(any)
 }

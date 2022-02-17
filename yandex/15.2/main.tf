@@ -6,8 +6,8 @@ provider "yandex" {
 
 locals {
   file_destination = "cat.jpg"
-  file_source = "terraform.jpg"
-  bucket_name = "netology-15-2"
+  file_source      = "terraform.jpg"
+  bucket_name      = "netology-15-2"
 }
 
 
@@ -23,10 +23,10 @@ module "sa_storage" {
 module "bucket" {
   source = "../modules/bucket"
 
-  folder = var.folder
-  name   = local.bucket_name
-  key    = module.sa_storage.key
-  file_source = local.file_source
+  folder           = var.folder
+  name             = local.bucket_name
+  key              = module.sa_storage.key
+  file_source      = local.file_source
   file_destination = local.file_destination
 }
 
@@ -46,19 +46,19 @@ module "sa_ig" {
 module "subnet" {
   source = "../modules/subnet"
 
-  name        = "private"
-  cidr        = ["192.168.20.0/24"]
-  network     = yandex_vpc_network.netology.id
+  name    = "private"
+  cidr    = ["192.168.20.0/24"]
+  network = yandex_vpc_network.netology.id
 }
 
 module "cloudinit" {
-  source   = "../modules/cloudinit"
+  source = "../modules/cloudinit"
 
   template = "<html><img src='https://storage.yandexcloud.net/${local.bucket_name}/${local.file_destination}'></html>"
 }
 
 module "instance_group" {
-  source   = "../modules/instance_group"
+  source = "../modules/instance_group"
 
   folder   = var.folder
   name     = "lamp"
@@ -76,7 +76,7 @@ module "instance_group" {
 module "lb" {
   source = "../modules/nlb"
 
-  instances   = module.instance_group.instances
+  instances = module.instance_group.instances
   depends_on = [
     module.instance_group,
   ]

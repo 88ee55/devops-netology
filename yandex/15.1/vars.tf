@@ -8,5 +8,5 @@ variable "folder" {
 
 variable "zone" {
   default = "ru-central1-c"
-  type = string
+  type    = string
 }

@@ -1,5 +1,5 @@
 variable "name" {
-    type = string
+  type = string
 }
 
 variable "cidr" {
@@ -8,6 +8,11 @@ variable "cidr" {
 variable "network" {
 }
 
+variable "zone" {
+  default = "ru-central1-c"
+  type    = string
+}
+
 variable "route_table" {
-    default = ""
+  default = ""
 }

@@ -15,7 +15,7 @@ variable "ip" {
 
 variable "nat" {
   default = false
-  type = bool
+  type    = bool
 }
 
 variable "sshkey" {

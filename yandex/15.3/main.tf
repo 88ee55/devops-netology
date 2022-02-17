@@ -6,8 +6,8 @@ provider "yandex" {
 
 locals {
   file_destination = "cat.jpg"
-  file_source = "terraform.jpg"
-  bucket_name = "netology-15-2"
+  file_source      = "terraform.jpg"
+  bucket_name      = "netology-15-2"
 }
 
 module "sa_storage" {
@@ -21,16 +21,16 @@ module "sa_storage" {
 module "kms" {
   source = "../modules/kms"
 
-  name   = "bucket"
+  name = "bucket"
 }
 
 module "bucket" {
   source = "../modules/bucket"
 
-  folder = var.folder
-  name   = local.bucket_name
-  key    = module.sa_storage.key
-  file_source = local.file_source
+  folder           = var.folder
+  name             = local.bucket_name
+  key              = module.sa_storage.key
+  file_source      = local.file_source
   file_destination = local.file_destination
-  sse    = {"key": module.kms.key.id}
+  sse              = { "key" : module.kms.key.id }
 }

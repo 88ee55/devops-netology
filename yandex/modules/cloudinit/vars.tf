@@ -1,4 +1,4 @@
 variable "template" {
   default = ""
-  type = string
+  type    = string
 }
