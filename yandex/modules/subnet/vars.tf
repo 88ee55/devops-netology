@@ -16,3 +16,8 @@ variable "zone" {
 variable "route_table" {
   default = ""
 }
+
+variable "prefix" {
+  default = "default"
+  type    = string
+}
