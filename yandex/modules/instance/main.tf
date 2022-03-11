@@ -1,6 +1,11 @@
+data "yandex_vpc_subnet" "default" {
+  subnet_id = var.subnet_id
+}
+
 resource "yandex_compute_instance" "default" {
   name        = var.name
   platform_id = "standard-v3"
+  zone        = data.yandex_vpc_subnet.default.zone
 
   resources {
     cores         = 2
@@ -23,7 +28,7 @@ resource "yandex_compute_instance" "default" {
   }
 
   network_interface {
-    subnet_id  = var.subnet
+    subnet_id  = var.subnet_id
     ip_address = var.ip != "" ? var.ip : null
     nat        = var.nat
   }

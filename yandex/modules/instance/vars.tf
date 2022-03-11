@@ -6,7 +6,7 @@ variable "image" {
   type = string
 }
 
-variable "subnet" {
+variable "subnet_id" {
 }
 
 variable "ip" {

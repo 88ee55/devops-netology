@@ -1,8 +1,4 @@
-variable "token" {
-  type = string
-}
-
-variable "folder" {
+variable "folder-id" {
   type = string
 }
 
@@ -13,5 +9,5 @@ variable "zone" {
 
 variable "protect" {
   default = true
-  type = bool
+  type    = bool
 }

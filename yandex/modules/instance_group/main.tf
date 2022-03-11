@@ -48,13 +48,4 @@ resource "yandex_compute_instance_group" "default" {
     max_expansion   = 2
     max_deleting    = 2
   }
-
-  health_check {
-    interval = "30"
-    timeout  = "10"
-    http_options {
-      port = 80
-      path = "/"
-    }
-  }
 }
